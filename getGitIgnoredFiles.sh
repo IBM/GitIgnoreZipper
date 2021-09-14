@@ -8,7 +8,7 @@ echo "  3) the overrides file name (e.g., .overrides)"
 echo "  4) the zipfile name."
 echo "Press Enter or Ctrl+C to abort..."
 read
-java -cp "./target/GitIgnoreZipper-1.0.0-jar-with-dependencies.jar" com.wnm3.gitignorezipper.GitIgnoreZipper $1 $2
+java -cp "./GitIgnoreZipper/target/GitIgnoreZipper-1.0.0-jar-with-dependencies.jar" com.wnm3.gitignorezipper.GitIgnoreZipper $1 $2 $3
 if [ -z $4 ]; then
     echo "Use a command like:";
     echo "zip WAAOrchFiles -@ <zipper.files";
