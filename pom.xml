@@ -25,7 +25,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ibm.gitignorezipper</groupId>
   <artifactId>GitIgnoreZipper</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
    <name>GitIgnoreZipper</name>
    <description>Find git ignored files to be zipped for recreating dev environments</description>
    <url>https://github.com/IBM/ai-c-aiden/common/GitIgnoreZipper</url>
@@ -65,7 +65,7 @@
       <dependency>
          <groupId>com.github.wnm3</groupId>
          <artifactId>API4JSON</artifactId>
-         <version>2.0.2</version>
+         <version>2.0.3</version>
       </dependency>
    </dependencies>
    <build>
@@ -141,24 +141,35 @@
             </configuration>
             -->
          </plugin>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.1.0</version>
-            <executions>
-               <execution>
-                  <id>attach-javadocs</id>
-                  <goals>
-                     <goal>jar</goal>
-                  </goals>
-               </execution>
-            </executions>
-            <configuration>
-               <additionalOptions>
-                  <additionalOption>-Xdoclint:none</additionalOption>
-               </additionalOptions>
-            </configuration>
-         </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.4.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+			            <configuration>
+					          <tagletArtifacts>
+					            <tagletArtifact>
+					              <artifactId>formatter:off</artifactId>
+					            </tagletArtifact>
+					            <tagletArtifact>
+					              <artifactId>formatter:on</artifactId>
+					            </tagletArtifact>
+					         </tagletArtifacts>
+			            </configuration>
+					</execution>
+				</executions>
+				<configuration>
+				    <source>8</source>
+					<additionalOptions>
+						<additionalOption>-Xdoclint:none</additionalOption>
+					</additionalOptions>
+				</configuration>
+			</plugin>
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>

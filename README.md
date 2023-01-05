@@ -1,4 +1,6 @@
 # GitIgnoreZipper
+## Version 1.0.2  
+
 Certain files are not desired to be stored in github repositories (e.g., customer data, SSL certificates, scripts with userids and passwords). These are listed in .gitignore files to keep them from being replicated. This repository provides a command line utility Eclipse Maven project for finding files that are not synchronized with a github repository (based on .gitignore file contents) and creates a file able to be read by the zip utility to capture these files in an archive. This allows a developer to share the zip of ignored files with a colleague so they can clone the repo then add files not stored in github, thus recreating the dev environment.
 
 ## Building Projects
@@ -11,7 +13,7 @@ Wildcards in .gitignore files are not processed, only listings of specific direc
 Content has been build using the Open  JDK version 1.8.0_252_b09 available  for download from https://adoptopenjdk.net/
 
 ### Eclipse Version
-Projects  were developed in Eclipse 2021-06 available from  https://www.eclipse.org/downloads/ installing the Java EE Profile during installation.
+Projects  were developed in Eclipse 2022-12 available from  https://www.eclipse.org/downloads/ installing the Java EE Profile during installation.
 
 ## License
 The  code  in this repository is licensed under the  Apache 2.0 License
